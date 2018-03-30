@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
 class Media extends Component {
+
   render() {
+    const styles = {
+      container: {
+        fontSize: 14,
+        backgroundColor: 'purple'
+      }
+    }
     return (
-      <div>
+      <div style={styles.container}>
         <div>
           <img src='./images/covers/responsive.jpg' alt='' width={260} height={160} />
         </div>

@@ -8,14 +8,14 @@ class Media extends Component {
       <div className='Media'>
         <div className='Media-cover'>
           <img className='Media-img'
-            src='./images/covers/responsive.jpg' 
+            src={this.props.src}
             alt='' 
             width={260} 
             height={160} 
           />
         </div>
-        <h3 className='Media-title'>¿Por qué aprender Responsive Design?</h3>
-        <p className='Media-author'>Steven Giraldo</p>
+        <h3 className='Media-title'>{this.props.title}</h3>
+        <p className='Media-author'>{this.props.author}</p>
       </div>
     )
   }

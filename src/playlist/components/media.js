@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
+import './media.css';
 
 class Media extends Component {
 
   render() {
-    const styles = {
-      container: {
-        fontSize: 14,
-        backgroundColor: 'purple'
-      }
-    }
     return (
-      <div style={styles.container}>
-        <div>
-          <img src='./images/covers/responsive.jpg' alt='' width={260} height={160} />
+      <div className='Media'>
+        <div className='Media-cover'>
+          <img className='Media-img'
+            src='./images/covers/responsive.jpg' 
+            alt='' 
+            width={260} 
+            height={160} 
+          />
         </div>
-        <h3>¿Por qué aprender Responsive Design?</h3>
-        <p>Steven Giraldo</p>
+        <h3 className='Media-title'>¿Por qué aprender Responsive Design?</h3>
+        <p className='Media-author'>Steven Giraldo</p>
       </div>
     )
   }

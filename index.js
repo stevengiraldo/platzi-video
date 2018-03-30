@@ -4,4 +4,4 @@ import Media from './src/playlist/components/media';
 
 const app = document.getElementById('app');
 
-render(<Media title='¿Por qué aprender Responsive Design?' author='Steven Giraldo' src='./images/covers/responsive.jpg' />, app);
+render(<Media title='¿Por qué aprender Responsive Design?' author='Steven Giraldo' src='./images/covers/responsive.jpg' type='audio' />, app);

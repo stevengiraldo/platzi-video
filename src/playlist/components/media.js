@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      author: 'Steven Giraldo'
-    }
+  state = {
+    author: 'Steven Giraldo'
   }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     author: 'Steven Giraldo'
+  //   }
+  // }
   handleClick = (event) => {
     this.setState({
       author: 'Jarvis Mendez'

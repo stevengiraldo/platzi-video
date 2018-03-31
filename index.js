@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Playlist from './src/playlist/components/playlist';
+import Category from './src/category/components/category';
 import data from './src/api.json';
 
 const app = document.getElementById('app');
 
-render(<Playlist data={data} />, app);
+render(<Category data={data} />, app);

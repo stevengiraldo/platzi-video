@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Media from './src/playlist/components/media';
+import Playlist from './src/playlist/components/playlist';
+import data from './src/api.json';
 
 const app = document.getElementById('app');
 
-render(<Media title='¿Por qué aprender Responsive Design?' author='Steven Giraldo' src='./images/covers/responsive.jpg' type='audio' />, app);
+render(<Playlist data={data} />, app);

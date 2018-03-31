@@ -8,7 +8,7 @@ class Media extends Component {
       <div className='Media'>
         <div className='Media-cover'>
           <img className='Media-img'
-            src={this.props.src}
+            src={this.props.cover}
             alt=''
             width={260}
             height={160}

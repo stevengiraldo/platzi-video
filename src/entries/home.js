@@ -5,4 +5,4 @@ import data from '../api.json';
 
 const app = document.getElementById('app');
 
-render(<Home />, app);
+render(<Home data={data}/>, app);

@@ -10,10 +10,6 @@ function Playlist(props) {
   const playlist = props.playlist
   return (
     <div className='Playlist'>
-      <Volume size={40} color='yellow' />
-      <Pause size={35} color='blue' />
-      <Play size={30} color='red' />
-      <Fullscreen size={25} color='green' />
       {
         playlist.map((item) => {
           return <Media

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Category from './src/category/components/category';
-import data from './src/api.json';
+import Category from '../category/components/category';
+import data from '../api.json';
 
 const app = document.getElementById('app');
 

@@ -1,0 +1,44 @@
+{
+  "myPlaylist": [
+    {
+      "id": 1,
+      "title": "LOU - Pixar (Nominado a un Oscar)",
+      "src": ""
+    },
+    {
+      "id": 2,
+      "title": "El vendedor de Humo",
+      "src": ""
+    },
+    {
+      "id": 3,
+      "title": "Precious plastic - Promo",
+      "src": ""
+    },
+    {
+      "id": 4,
+      "title": "Lord of the Rings Medley - Lindsey Stirling",
+      "src": ""
+    },
+    {
+      "id": 5,
+      "title": "Mission Impossible Theme: Violin Cover (Taylor Davis)",
+      "src": ""
+    },
+    {
+      "id": 6,
+      "title": "He's a Pirate (Disney's Pirates of the Caribbean Theme)",
+      "src": ""
+    },
+    {
+      "id": 7,
+      "title": "For The Birds (1080p) (Pixar Short Films)",
+      "src": ""
+    },
+    {
+      "id": 8,
+      "title": "Pigeons (Disney Pixar Studio)",
+      "src": ""
+    }
+  ]
+}

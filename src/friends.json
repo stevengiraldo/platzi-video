@@ -1,0 +1,29 @@
+{
+  "friends": [
+    {
+      "id": 1,
+      "avatar": "https://randomuser.me/api/portraits/thumb/women/21.jpg",
+      "fullname": "Arianna Shelton"
+    },
+    {
+      "id": 2,
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/28.jpg",
+      "fullname": "Tyson Gonzales"
+    },
+    {
+      "id": 3,
+      "avatar": "https://randomuser.me/api/portraits/thumb/women/18.jpg",
+      "fullname": "Jessica Holmes"
+    },
+    {
+      "id": 4,
+      "avatar": "https://randomuser.me/api/portraits/thumb/men/2.jpg",
+      "fullname": "Callie Mcdonald"
+    },
+    {
+      "id": 5,
+      "avatar": "https://randomuser.me/api/portraits/thumb/women/96.jpg",
+      "fullname": "Michelle Love"
+    }
+  ]
+}

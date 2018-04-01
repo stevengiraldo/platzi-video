@@ -1,0 +1,14 @@
+.FriendLabel {
+  display: flex;
+  align-items: center;
+  padding: .5em 0;
+}
+
+.FriendLabel p {
+  margin: 0;
+  margin-left: 1em;
+}
+
+.FriendLabel-avatar img {
+  border-radius: 50%;
+}

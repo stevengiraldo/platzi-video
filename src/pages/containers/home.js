@@ -6,6 +6,7 @@ import { myPlaylist } from '../../my-playlist.json';
 import { friends } from '../../friends.json';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal';
+import HandleError from '../../error/containers/handle-error';
 
 class Home extends Component {
   state = {
@@ -23,20 +24,22 @@ class Home extends Component {
   }
   render() {
     return (
-      <HomeLayout>
-        <Related myPlaylist={myPlaylist} friends={friends} />
-        <Categories 
-          categories={this.props.data.categories} 
-          handleOpenModal={this.handleOpenModal}
-          />
-        {
-        this.state.modalVisible &&
-        <ModalContainer>
-          <Modal handleClick={this.handleCloseModal}>
-          </Modal>
-        </ModalContainer>
-        }
-      </HomeLayout>
+      <HandleError>
+        <HomeLayout>
+          <Related myPlaylist={myPlaylist} friends={friends} />
+          <Categories 
+            categories={this.props.data.categories} 
+            handleOpenModal={this.handleOpenModal}
+            />
+          {
+          this.state.modalVisible &&
+          <ModalContainer>
+            <Modal handleClick={this.handleCloseModal}>
+            </Modal>
+          </ModalContainer>
+          }
+        </HomeLayout>
+      </HandleError>
     )
   }
 }

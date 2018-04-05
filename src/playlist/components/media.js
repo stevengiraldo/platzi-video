@@ -4,7 +4,7 @@ import './media.css';
 
 function Media(props) {
   return (
-    <div className='Media'>
+    <div className='Media' onClick={props.handleClick}>
       <div className='Media-cover'>
         <img className='Media-img'
           src={props.cover}

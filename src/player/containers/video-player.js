@@ -5,6 +5,7 @@ import Title from '../components/title';
 import PlayPause from '../components/play-pause';
 import Timer from '../components/timer';
 import VideoPlayerControls from '../components/video-player-controls';
+import ProgressBar from '../components/progress-bar';
 
 function formattedTime(secs) {
   const minutes = parseInt(secs / 60, 10)
@@ -35,13 +36,16 @@ class VideoPlayer extends Component {
   handleLoadedMetadata = event => {
     this.video = event.target;
     this.setState({
-      duration: formattedTime(this.video.duration)
+      duration: this.video.duration
     })
   }
   handleTimeUpdate = event => {
     this.setState({
-      currentTime: formattedTime(this.video.currentTime)
+      currentTime: this.video.currentTime
     })
+  }
+  handleProgressChange = event => {
+    this.video.currentTime = event.target.value
   }
   render() {
     return (
@@ -53,8 +57,13 @@ class VideoPlayer extends Component {
             pause={this.state.pause}
           />
           <Timer
+            duration={formattedTime(this.state.duration)}
+            currentTime={formattedTime(this.state.currentTime)}
+          />
+          <ProgressBar
             duration={this.state.duration}
-            currentTime={this.state.currentTime}
+            time={this.state.currentTime}
+            handleProgressChange={this.handleProgressChange}
           />
         </VideoPlayerControls>
         <Video 

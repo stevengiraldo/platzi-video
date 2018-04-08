@@ -3,10 +3,13 @@ import VideoPlayerLayout from '../components/video-player-layout';
 import Video from '../components/video';
 import Title from '../components/title';
 import PlayPause from '../components/play-pause';
+import Timer from '../components/timer';
+import VideoPlayerControls from '../components/video-player-controls';
 
 class VideoPlayer extends Component {
   state = {
     pause: false,
+    duration: 0
   }
   togglePlay = (event) => {
     this.setState({
@@ -18,17 +21,27 @@ class VideoPlayer extends Component {
       pause: (!this.props.autoplay)
     })
   }
+  handleLoadedMetadata = event => {
+    this.video = event.target;
+    this.setState({
+      duration: this.video.duration
+    })
+  }
   render() {
     return (
       <VideoPlayerLayout>
         <Title title='Esto es un video' />
-        <PlayPause 
-          handleClick={this.togglePlay}
-          pause={this.state.pause}
-        />
+        <VideoPlayerControls>
+          <PlayPause 
+            handleClick={this.togglePlay}
+            pause={this.state.pause}
+          />
+          <Timer duration={this.state.duration} />
+        </VideoPlayerControls>
         <Video 
           autoplay={this.props.autoplay}
           pause={this.state.pause}
+          handleLoadedMetadata={this.handleLoadedMetadata}
         />
       </VideoPlayerLayout>
     )

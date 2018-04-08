@@ -25,6 +25,7 @@ class Video extends Component {
           width={500}
           src='http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4'
           ref={this.setRef}
+          onLoadedMetadata={this.props.handleLoadedMetadata}
         />
       </div>
     )

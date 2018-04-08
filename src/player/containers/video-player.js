@@ -13,15 +13,23 @@ class VideoPlayer extends Component {
       pause: !this.state.pause
     })
   }
+  componentDidMount() {
+    this.setState({
+      pause: (!this.props.autoplay)
+    })
+  }
   render() {
     return (
       <VideoPlayerLayout>
         <Title title='Esto es un video' />
         <PlayPause 
-          pause={this.state.pause}
           handleClick={this.togglePlay}
+          pause={this.state.pause}
         />
-        <Video />
+        <Video 
+          autoplay={this.props.autoplay}
+          pause={this.state.pause}
+        />
       </VideoPlayerLayout>
     )
   }

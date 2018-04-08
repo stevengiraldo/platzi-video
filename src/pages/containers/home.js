@@ -28,8 +28,8 @@ class Home extends Component {
       <HandleError>
         <HomeLayout>
           <Related myPlaylist={myPlaylist} friends={friends} />
-          <VideoPlayer />
-          <Categories 
+          <VideoPlayer autoplay />
+          <Categories
             categories={this.props.data.categories} 
             handleOpenModal={this.handleOpenModal}
             />

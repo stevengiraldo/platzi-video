@@ -7,6 +7,7 @@ import Timer from '../components/timer';
 import VideoPlayerControls from '../components/video-player-controls';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
+import Volume from '../components/volume';
 
 function formattedTime(secs) {
   const minutes = parseInt(secs / 60, 10)
@@ -59,6 +60,9 @@ class VideoPlayer extends Component {
       loading: false
     })
   }
+  handleVolumeChange = event => {
+    this.video.volume = event.target.value
+  }
   render() {
     return (
       <VideoPlayerLayout>
@@ -77,6 +81,7 @@ class VideoPlayer extends Component {
             time={this.state.currentTime}
             handleProgressChange={this.handleProgressChange}
           />
+          <Volume handleVolumeChange={this.handleVolumeChange}/>
         </VideoPlayerControls>
         <Spinner active={this.state.loading} />
         <Video 

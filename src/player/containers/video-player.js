@@ -6,6 +6,7 @@ import PlayPause from '../components/play-pause';
 import Timer from '../components/timer';
 import VideoPlayerControls from '../components/video-player-controls';
 import ProgressBar from '../components/progress-bar';
+import Spinner from '../components/spinner';
 
 function formattedTime(secs) {
   const minutes = parseInt(secs / 60, 10)
@@ -22,6 +23,7 @@ class VideoPlayer extends Component {
     pause: false,
     duration: 0,
     currentTime: 0,
+    loading: false,
   }
   togglePlay = (event) => {
     this.setState({
@@ -47,6 +49,16 @@ class VideoPlayer extends Component {
   handleProgressChange = event => {
     this.video.currentTime = event.target.value
   }
+  handleSeeking = event => {
+    this.setState({
+      loading: true
+    })
+  }
+  handleSeeked = event => {
+    this.setState({
+      loading: false
+    })
+  }
   render() {
     return (
       <VideoPlayerLayout>
@@ -66,11 +78,14 @@ class VideoPlayer extends Component {
             handleProgressChange={this.handleProgressChange}
           />
         </VideoPlayerControls>
+        <Spinner active={this.state.loading} />
         <Video 
           autoplay={this.props.autoplay}
           pause={this.state.pause}
           handleLoadedMetadata={this.handleLoadedMetadata}
           handleTimeUpdate={this.handleTimeUpdate}
+          handleSeeking={this.handleSeeking}
+          handleSeeked={this.handleSeeked}
         />
       </VideoPlayerLayout>
     )

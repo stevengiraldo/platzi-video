@@ -90,7 +90,7 @@ class VideoPlayer extends Component {
   render() {
     return (
       <VideoPlayerLayout setRef={this.setRef}>
-        <Title title='Esto es un video' />
+        <Title title={this.props.title} />
         <VideoPlayerControls>
           <PlayPause 
             handleClick={this.togglePlay}
@@ -122,6 +122,7 @@ class VideoPlayer extends Component {
           handleTimeUpdate={this.handleTimeUpdate}
           handleSeeking={this.handleSeeking}
           handleSeeked={this.handleSeeked}
+          src={this.props.src}
         />
       </VideoPlayerLayout>
     )

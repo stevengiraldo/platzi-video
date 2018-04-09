@@ -28,8 +28,7 @@ class Video extends Component {
       <div className='Video'>
         <video
           autoPlay={this.props.autoplay}
-          width={500}
-          src='http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4'
+          src={this.props.src}
           ref={this.setRef}
           onLoadedMetadata={handleLoadedMetadata}
           onTimeUpdate={handleTimeUpdate}

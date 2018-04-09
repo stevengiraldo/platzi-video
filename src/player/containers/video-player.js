@@ -25,6 +25,7 @@ class VideoPlayer extends Component {
     duration: 0,
     currentTime: 0,
     loading: false,
+    mute: false,
   }
   togglePlay = (event) => {
     this.setState({
@@ -62,6 +63,17 @@ class VideoPlayer extends Component {
   }
   handleVolumeChange = event => {
     this.video.volume = event.target.value
+    if(this.state.mute) {
+      this.setState({
+        mute: !this.state.mute
+      })
+    }
+  }
+  toggleVolume = event => {
+    this.setState({
+      mute: !this.state.mute
+    })
+    this.video.volume = !this.video.volume
   }
   render() {
     return (
@@ -81,7 +93,11 @@ class VideoPlayer extends Component {
             time={this.state.currentTime}
             handleProgressChange={this.handleProgressChange}
           />
-          <Volume handleVolumeChange={this.handleVolumeChange}/>
+          <Volume
+            handleVolumeChange={this.handleVolumeChange}
+            handleClick={this.toggleVolume}
+            mute={this.state.mute}
+          />
         </VideoPlayerControls>
         <Spinner active={this.state.loading} />
         <Video 

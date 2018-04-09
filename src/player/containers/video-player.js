@@ -8,6 +8,7 @@ import VideoPlayerControls from '../components/video-player-controls';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
 import Volume from '../components/volume';
+import FullScreen from '../components/full-screen';
 
 function formattedTime(secs) {
   const minutes = parseInt(secs / 60, 10)
@@ -75,9 +76,20 @@ class VideoPlayer extends Component {
     })
     this.video.volume = !this.video.volume
   }
+  handleFullScreenClick = event => {
+    console.log('click fullscreen')
+    if(!document.webkitIsFullScreen) {
+      this.player.webkitRequestFullScreen()
+    } else {
+      document.webkitExitFullscreen()
+    }
+  }
+  setRef = element => {
+    this.player = element
+  }
   render() {
     return (
-      <VideoPlayerLayout>
+      <VideoPlayerLayout setRef={this.setRef}>
         <Title title='Esto es un video' />
         <VideoPlayerControls>
           <PlayPause 
@@ -97,6 +109,9 @@ class VideoPlayer extends Component {
             handleVolumeChange={this.handleVolumeChange}
             handleClick={this.toggleVolume}
             mute={this.state.mute}
+          />
+          <FullScreen
+            handleFullScreenClick={this.handleFullScreenClick}
           />
         </VideoPlayerControls>
         <Spinner active={this.state.loading} />
